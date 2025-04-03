@@ -1,0 +1,27 @@
+{
+  "name": "expenseschatbot_connectorservice",
+  "version": "1.0.0",
+  "description": "This service acts as the interface between the Telegram API and the Bot Service. It manages the reception of inbound messages from users, forwards these messages to the Bot Service for processing, and sends the appropriate responses back to the users via Telegram.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Denise-E/ExpensesChatbot_ConnectorService.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Denise-E/ExpensesChatbot_ConnectorService/issues"
+  },
+  "homepage": "https://github.com/Denise-E/ExpensesChatbot_ConnectorService#readme",
+  "dependencies": {
+    "axios": "^1.8.4",
+    "dotenv": "^16.4.7",
+    "express": "^5.1.0",
+    "telegraf": "^4.16.3",
+    "typescript": "^5.8.2"
+  }
+}
