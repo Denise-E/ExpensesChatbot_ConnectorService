@@ -2,8 +2,10 @@
   "name": "expenseschatbot_connectorservice",
   "version": "1.0.0",
   "description": "This service acts as the interface between the Telegram API and the Bot Service. It manages the reception of inbound messages from users, forwards these messages to the Bot Service for processing, and sends the appropriate responses back to the users via Telegram.",
-  "main": "index.js",
+  "main": "index.ts",
   "scripts": {
+    "start": "ts-node src/index.ts",
+    "dev": "nodemon --ext ts --exec ts-node src/index.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -21,7 +23,13 @@
     "axios": "^1.8.4",
     "dotenv": "^16.4.7",
     "express": "^5.1.0",
-    "telegraf": "^4.16.3",
+    "telegraf": "^4.12.2",
     "typescript": "^5.8.2"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.17",
+    "@types/node": "^22.14.0",
+    "nodemon": "^3.0.2",
+    "ts-node": "^10.9.2"
   }
 }
