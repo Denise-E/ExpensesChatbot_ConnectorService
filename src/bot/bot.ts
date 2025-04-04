@@ -1,6 +1,6 @@
 import { Telegraf } from 'telegraf';
 import { startHandler } from './botHandlers/startHandler';
-import { uploadExpenseHandler } from './botHandlers/uploadExpensesHandler';
+import { uploadExpenseHandler } from './botHandlers/uploadExpenseHandler';
 import { getExpensesHandler } from './botHandlers/getExpensesHandler';
 import { env } from '../config/env';
 
