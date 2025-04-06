@@ -1,8 +1,8 @@
 # ExpensesChatbot_ConnectorService
-This service acts as the interface between the Telegram API and the Bot Service. It manages the reception of inbound messages from users, forwards these messages to the Bot Service for processing, and sends the appropriate responses back to the users via Telegram.
 
-ExpensesChatbot_ConnectorService is responsible for receiving Telegram messages from users, forwarding them to the BotService API for processing, and then replying to the user with the processed response. It is implemented in Node.js using Telegraf and Express, and communicates with the Python-based BotService over HTTP.
+ExpensesChatbot_ConnectorService serves as the integration layer between the Telegram API and the core Bot Service. It is responsible for receiving incoming messages from users via Telegram, forwarding those messages to the Bot Service for processing, and returning the corresponding responses back to the users. Built with Node.js using the Telegraf and Express frameworks, it communicates with the Python-based Bot Service over HTTP, acting as the bridge between the user interface and the backend logic for expense management.
 
+Bot service link: https://github.com/Denise-E/ExpensesChatbot_BotService
 
 ## ⚙️ Technologies Used
 
@@ -16,7 +16,9 @@ ExpensesChatbot_ConnectorService is responsible for receiving Telegram messages 
 
 ### Clone the repository
 
-### Make sure to have NodeJS installed https://nodejs.org/es/download
+### Prerequisites
+
+Ensure you have [Node.js](https://nodejs.org/en/download) installed on your system (LTS version recommended).
 
 ### 💾 Install Dependencies
 
@@ -25,6 +27,7 @@ npm install
 ```
 
 ### .env Variables
+
 Create a .env file in the root directory with the following content:
 
 TELEGRAM_BOT_TOKEN=your_telegram_bot_token
