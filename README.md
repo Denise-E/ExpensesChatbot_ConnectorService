@@ -2,7 +2,9 @@
 
 ExpensesChatbot_ConnectorService serves as the integration layer between the Telegram API and the core Bot Service. It is responsible for receiving incoming messages from users via Telegram, forwarding those messages to the Bot Service for processing, and returning the corresponding responses back to the users. Built with Node.js using the Telegraf and Express frameworks, it communicates with the Python-based Bot Service over HTTP, acting as the bridge between the user interface and the backend logic for expense management.
 
-Bot service link: https://github.com/Denise-E/ExpensesChatbot_BotService
+### Related Repository
+
+- [ExpensesChatbot_BotService](https://github.com/Denise-E/ExpensesChatbot_BotService): Core service responsible for processing and storing expense data.
 
 ## ⚙️ Technologies Used
 
