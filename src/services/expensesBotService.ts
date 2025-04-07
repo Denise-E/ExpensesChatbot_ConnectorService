@@ -1,37 +1,9 @@
 import axios from 'axios';
 import { env } from '../config/env';
+import {UploadExpensePayload, UploadExpenseResponse, GetExpensePayload,GetExpensesResponse} from '../schemas/expenses_schemas'
 
 const BOT_SERVICE_URL = env.botServiceURL
 
-interface UploadExpensePayload {
-  telegram_id: string;
-  message: string;
-}
-
-export interface UploadExpenseResponse {
-    user_id: number;
-    description: string;
-    amount: number;
-    category: string;
-    added_at: Date;
-  }
-
-interface GetExpensePayload {
-    telegram_id: string;
-  }
-
-  export interface Expense {
-    user_id: number;
-    description: string;
-    amount: string; 
-    category: string;
-    added_at: string;
-    id: number;
-  }
-  
-  export interface GetExpensesResponse {
-    expenses: Expense[];
-  }
 
 export const uploadExpense = async (payload: UploadExpensePayload): Promise<UploadExpenseResponse> => {
   try {
