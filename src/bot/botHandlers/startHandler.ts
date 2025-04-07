@@ -6,6 +6,6 @@ export const startHandler = (ctx: Context) => {
 
   ctx.telegram.sendMessage(
     ctx.chat!.id,
-    '¡Hola! Bienvenido al bot de gastos. Usá /obtener para ver tus gastos, o /cargar para agregar uno nuevo.'
+    'Hi! Welcome to the Expenses Bot.You can use any of the following commands:\n \n/upload - To upload a new expense \n/get - To see al your expenses \n/help - To see all the enable commands'
   );
 };

@@ -18,7 +18,7 @@ export interface UploadExpenseResponse {
 
 export const uploadExpense = async (payload: UploadExpensePayload): Promise<UploadExpenseResponse> => {
   try {
-    const response = await axios.post(`${BOT_SERVICE_URL}/create/expenses`, payload);
+    const response = await axios.post(`${BOT_SERVICE_URL}/expenses/create`, payload);
     return response.data;
   } catch (error: any) {
     console.error('Unable to save the expense:', error.response?.data || error.message);
