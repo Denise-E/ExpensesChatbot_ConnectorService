@@ -7,14 +7,15 @@ export const uploadExpenseHandler = async (ctx: Context) => {
   console.log("Uploading expense");
 
   if (!ctx.message || !isTextMessage(ctx.message)) {
-    return ctx.reply("Este comando solo acepta mensajes de texto.");
+    console.log("Invalid input")
+    return ctx.reply("");
   }
 
-  const telegram_id: number = ctx.from!.id;
-  const description = ctx.message.text.replace(/^\/cargar\s*/, "");
+  const telegram_id: string = String(ctx.from!.id);
+  const message = ctx.message.text.replace(/^\/cargar\s*/, "");
 
   try {
-    const response = await uploadExpense({ telegram_id, text: description });
+    const response = await uploadExpense({ telegram_id, message});
     const category = response.category
 
     ctx.telegram.sendMessage(ctx.chat!.id, `${category} expense added ✅`);
@@ -23,9 +24,9 @@ export const uploadExpenseHandler = async (ctx: Context) => {
     const message = error.response?.data?.msg || error.message;
 
     if (status === 400 && message.includes('User not found')) {
-      console.log(`Usuario no autorizado: ${telegram_id}`);
+      console.log(`Unauthorize user: ${telegram_id}`);
       return; // Ignore unauthorize users
     }
-    ctx.telegram.sendMessage(ctx.chat!.id, 'Sorry, we weren´t able to save you expense. Please, try again later.');
+    ctx.telegram.sendMessage(ctx.chat!.id, 'Sorry, we were not able to save you expense. Please, try again later.');
   }
 };
