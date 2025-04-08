@@ -1,6 +1,6 @@
-import { Context } from 'telegraf';
-import { getTelegramId } from '../../utils/telegramHelpers';
-import logger from '../../utils/logger';
+import { Context } from "telegraf";
+import { getTelegramId } from "../../utils/telegramHelpers";
+import logger from "../../utils/logger";
 
 // Bot excecution when getting user tekegram id
 export const getIdHandler = async (ctx: Context) => {
@@ -10,5 +10,4 @@ export const getIdHandler = async (ctx: Context) => {
   const telegram_id = getTelegramId(ctx);
   // Returns telegram_id in the response message
   ctx.telegram.sendMessage(ctx.chat!.id, `Your telegram ID: ${telegram_id}`);
-
 };

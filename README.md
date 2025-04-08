@@ -33,7 +33,7 @@ npm install
 Create a .env file in the root directory with the following content:
 
 TELEGRAM_BOT_TOKEN=your_telegram_bot_token
-BOT_SERVICE_URL=bot_service_url 
+BOT_SERVICE_URL=bot_service_url
 
 ### 🚀 Run the Project
 
@@ -54,6 +54,7 @@ npm run start
 Unlike traditional REST APIs, this service doesn't expose public endpoints. Instead, it passively listens to incoming messages sent to a Telegram bot.
 
 To set up your bot:
+
 1. Open Telegram and search for [@BotFather](https://t.me/BotFather).
 2. Start a chat and use the `/newbot` command to create a new bot.
 3. Follow the prompts to give your bot a name and username.

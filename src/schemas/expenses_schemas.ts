@@ -5,23 +5,23 @@ export interface UploadExpensePayload {
 }
 // Bot Service create expense response schema
 export interface UploadExpenseResponse {
-    user_id: number;
-    description: string;
-    amount: number;
-    category: string;
-    added_at: Date;
+  user_id: number;
+  description: string;
+  amount: number;
+  category: string;
+  added_at: Date;
 }
 
 // Bot Service get expenses payload schema
 export interface GetExpensePayload {
-    telegram_id: string;
+  telegram_id: string;
 }
 
 // Expense schema
 interface Expense {
   user_id: number;
   description: string;
-  amount: string; 
+  amount: string;
   category: string;
   added_at: string;
   id: number;
@@ -29,5 +29,5 @@ interface Expense {
 
 // Bot Service get expenses response schema
 export interface GetExpensesResponse {
-    expenses: Expense[];
+  expenses: Expense[];
 }
