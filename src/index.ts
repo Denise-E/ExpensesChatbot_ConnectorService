@@ -11,7 +11,7 @@ app.use(express.static("static"));
 app.use(express.json());
 
 app.get("/", (_req: Request, res: Response) => {
-  res.send('¡Hola desde Railway + TypeScript!');
+  res.send('Hi from Railway with NodeJS and TypeScript!');
 });
 
 // Launches Telegraf bot
