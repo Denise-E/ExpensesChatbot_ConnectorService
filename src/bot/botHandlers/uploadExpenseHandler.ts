@@ -2,14 +2,15 @@ import { Context } from 'telegraf';
 import { isTextMessage, getTelegramId } from '../../utils/telegramHelpers';
 import { uploadExpense } from '../../services/expensesBotService';
 import { BotServiceErrorHandler } from '../../utils/errorsHandler';
+import logger from '../../utils/logger';
 
 // Bot excecution when uploading a new expense
 export const uploadExpenseHandler = async (ctx: Context) => {
-  console.log("Uploading expense");
+  logger.info("Uploading expense");
 
   // Validating input is not a empty string
   if (!ctx.message || !isTextMessage(ctx.message)) {
-    console.log("Invalid input");
+    logger.error("Invalid input");
     return ctx.reply("");
   }
 

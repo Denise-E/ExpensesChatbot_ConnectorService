@@ -1,9 +1,10 @@
 import { Context } from 'telegraf';
+import logger from '../../utils/logger';
 
 // Bot response when starting a conversation
 export const startHandler = (ctx: Context) => {
-  console.log("Expenses bot started")
-  //console.log("Telegram user info:", ctx.from)
+  logger.info("Expenses bot started")
+  //logger.info("Telegram user info:", ctx.from)
 
   // Bot response message - gives information about the enable commands
   ctx.telegram.sendMessage(

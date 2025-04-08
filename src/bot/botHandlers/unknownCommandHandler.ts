@@ -1,9 +1,11 @@
   
 import { Context, MiddlewareFn } from 'telegraf';
 import { Message } from 'telegraf/types';
+import logger from '../../utils/logger';
 
 // Middleware for unrecognized input from Telegram Bot
 export const unknownCommandHandler: MiddlewareFn<Context> = async (ctx) => {
+  logger.info("Unknown command management")
     const messageText = (ctx.message as Message.TextMessage)?.text;
 
   // If the received text is a command but is not implemented 

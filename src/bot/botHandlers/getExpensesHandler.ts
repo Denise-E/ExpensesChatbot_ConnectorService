@@ -3,10 +3,11 @@ import { getExpenses } from '../../services/expensesBotService';
 import { getTelegramId } from '../../utils/telegramHelpers';
 import { BotServiceErrorHandler } from '../../utils/errorsHandler';
 import { formatExpensesList } from '../../utils/formatters/expensesFormatters';
+import logger from '../../utils/logger';
 
 // Bot excecution when getting user expenses
 export const getExpensesHandler = async (ctx: Context) => {
-  console.log("Getting user expenses");
+  logger.info("Getting user expenses");
 
   const telegram_id = getTelegramId(ctx);
 

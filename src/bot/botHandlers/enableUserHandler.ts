@@ -2,10 +2,11 @@ import { Context } from 'telegraf';
 import { getTelegramId } from '../../utils/telegramHelpers';
 import { BotServiceErrorHandler } from '../../utils/errorsHandler';
 import { createUser } from '../../services/expensesBotService';
+import logger from '../../utils/logger';
 
 // Bot excecution when adding a new user to the whitelis
 export const enableUserHandler = async (ctx: Context) => {
-  console.log("Adding user to whitelist");
+  logger.info("Adding user to whitelist");
 
   const telegram_id = getTelegramId(ctx);
 

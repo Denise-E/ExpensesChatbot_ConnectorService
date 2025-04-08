@@ -1,9 +1,10 @@
 import { Context } from 'telegraf';
 import { getTelegramId } from '../../utils/telegramHelpers';
+import logger from '../../utils/logger';
 
 // Bot excecution when getting user tekegram id
 export const getIdHandler = async (ctx: Context) => {
-  console.log("Getting user telegram_id");
+  logger.info("Getting user telegram_id");
 
   // Gets user telegram_id
   const telegram_id = getTelegramId(ctx);
