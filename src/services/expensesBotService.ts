@@ -22,7 +22,7 @@ export const uploadExpense = async (
 ): Promise<UploadExpenseResponse> => {
   try {
     const response = await axios.post(
-      `${BOT_SERVICE_URL}/expenses/create`,
+      `${BOT_SERVICE_URL}/api/expenses/create`,
       payload,
     );
     return response.data;
@@ -43,7 +43,7 @@ export const getExpenses = async (
   try {
     logger.info(`BOT SERVICE URL ${BOT_SERVICE_URL}`)
     const response = await axios.get(
-      `${BOT_SERVICE_URL}/expenses/get/${payload.telegram_id}/all`,
+      `${BOT_SERVICE_URL}/api/expenses/get/${payload.telegram_id}/all`,
     );
     return response.data;
   } catch (error: any) {
@@ -62,7 +62,7 @@ export const createUser = async (
 ): Promise<GetExpensesResponse> => {
   try {
     const response = await axios.post(
-      `${BOT_SERVICE_URL}/users/create`,
+      `${BOT_SERVICE_URL}/api/users/create`,
       payload,
     );
     return response.data;
