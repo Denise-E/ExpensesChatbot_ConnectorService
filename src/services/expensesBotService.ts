@@ -41,7 +41,7 @@ export const getExpenses = async (
   payload: GetExpensePayload,
 ): Promise<GetExpensesResponse> => {
   try {
-    logger.info("BOT SERVICE URL ->", BOT_SERVICE_URL)
+    logger.info(`BOT SERVICE URL ${BOT_SERVICE_URL}`)
     const response = await axios.get(
       `${BOT_SERVICE_URL}/expenses/get/${payload.telegram_id}/all`,
     );
