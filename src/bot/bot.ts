@@ -6,6 +6,7 @@ import { env } from '../config/env';
 import { helpHandler } from './botHandlers/helpHandler';
 import { unknownCommandHandler } from './botHandlers/unknownCommandHandler';
 import { getIdHandler } from './botHandlers/getIdHandler';
+import { enableUserHandler } from './botHandlers/enableUserHandler';
 
 // Gets bot token and validates it's value
 const BOT_TOKEN: string = env.telegramBotToken || "";
@@ -23,6 +24,8 @@ bot.command('upload', uploadExpenseHandler);
 bot.command('get', getExpensesHandler)
 bot.command('help', helpHandler);
 bot.command('id', getIdHandler);
+bot.command('whitelist', enableUserHandler);
+
 
 // It manage unknown commands and texts received from the Telegram bot
 bot.use(unknownCommandHandler);

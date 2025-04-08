@@ -32,3 +32,15 @@ export const getExpenses = async (payload: GetExpensePayload): Promise<GetExpens
     throw error;
   }
 };
+
+// Request de Bot Service API to create a new user
+export const createUser = async (payload: GetExpensePayload): Promise<GetExpensesResponse> => {
+  try {
+    const response = await axios.post(`${BOT_SERVICE_URL}/users/create`, payload);
+    return response.data;
+  } catch (error: any) {
+    console.error('Unable to get expenses:', error.response?.data || error.message);
+    console.log("ERROR RESPONSE:", error.response)
+    throw error;
+  }
+};
