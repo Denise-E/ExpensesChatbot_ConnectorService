@@ -1,5 +1,4 @@
 import express, { Request, Response } from "express";
-import path from "path";
 import { bot } from "./bot/bot";
 
 // Express inititalization
@@ -12,7 +11,7 @@ app.use(express.static("static"));
 app.use(express.json());
 
 app.get("/", (_req: Request, res: Response) => {
-  res.sendFile(path.join(__dirname, "index.html"));
+  res.send('¡Hola desde Railway + TypeScript!');
 });
 
 // Launches Telegraf bot
