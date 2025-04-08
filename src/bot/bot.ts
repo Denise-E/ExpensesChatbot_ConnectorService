@@ -23,8 +23,8 @@ bot.command('start', startHandler);
 bot.command('upload', uploadExpenseHandler);
 bot.command('get', getExpensesHandler)
 bot.command('help', helpHandler);
-bot.command('id', getIdHandler);
-bot.command('whitelist', enableUserHandler);
+bot.command('id', getIdHandler); // For testing use
+bot.command('whitelist', enableUserHandler); // For testing use
 
 
 // It manage unknown commands and texts received from the Telegram bot
