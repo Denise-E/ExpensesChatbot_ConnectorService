@@ -15,6 +15,7 @@ if (!BOT_SERVICE_URL) {
   throw new Error("BOT_SERVICE_URL is not defined in environment variables");
 }
 
+
 // Request de Bot Service API to save the new expense
 export const uploadExpense = async (
   payload: UploadExpensePayload,
@@ -40,6 +41,7 @@ export const getExpenses = async (
   payload: GetExpensePayload,
 ): Promise<GetExpensesResponse> => {
   try {
+    logger.info("BOT SERVICE URL ->", BOT_SERVICE_URL)
     const response = await axios.get(
       `${BOT_SERVICE_URL}/expenses/get/${payload.telegram_id}/all`,
     );
